@@ -204,6 +204,3 @@ The framework is integrated with:
 **Alok Patel**
 
 Software QA Engineer | SDET | Automation Enthusiast
-
-
-
