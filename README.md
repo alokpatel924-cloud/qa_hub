@@ -12,9 +12,5 @@ TestNG
 Page Object Model (POM)
 ThreadLocal Driver Management
 Cross Browser Support
-Headless Execution
-Explicit Wait Utilities
-JavaScript Utilities
-Screenshot Utility
-Retry Analyzer
-Extent Reports
+
+this is for checking new branch concept
