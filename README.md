@@ -18,4 +18,3 @@ JavaScript Utilities
 Screenshot Utility
 Retry Analyzer
 Extent Reports
-Log4j2 Logging
