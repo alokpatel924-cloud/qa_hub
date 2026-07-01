@@ -205,7 +205,5 @@ The framework is integrated with:
 
 Software QA Engineer | SDET | Automation Enthusiast
 
----
 
-⭐ If you found this project useful, consider giving it a star on GitHub.
 
