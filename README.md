@@ -204,3 +204,4 @@ The framework is integrated with:
 **Alok Patel**
 
 Software QA Engineer | SDET 
+I am trying to learn all git commands which are required
