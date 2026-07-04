@@ -1,206 +1,256 @@
-# 🚀 Hybrid Automation Framework
+# Enterprise Hybrid Automation Framework
 
-A scalable, enterprise-ready Hybrid Test Automation Framework built using **Java, Selenium WebDriver, TestNG, Rest Assured, Maven, and Jenkins**. The framework supports both **UI Automation** and **API Automation** while following clean architecture, reusable utilities, and industry best practices.
+> A production-ready Hybrid Test Automation Framework built using **Java, Selenium WebDriver, TestNG, Rest Assured, Maven, Docker, Docker Compose, and Selenium Grid**.
 
----
-
-# 📌 Features
-
-## ✅ UI Automation
-
-* Selenium WebDriver
-* Java 17
-* TestNG
-* Page Object Model (POM)
-* ThreadLocal Driver Management
-* Cross Browser Support
-* Headless Execution
-* Explicit Wait Utilities
-* JavaScript Utilities
-* Screenshot Utility
-* Retry Analyzer
-* Extent Reports
-* Log4j2 Logging
+This framework supports **UI Automation**, **API Automation**, **Local & Remote Execution**, **Dockerized Test Execution**, and follows enterprise automation best practices with a scalable, maintainable architecture.
 
 ---
 
-## ✅ API Automation
+## 📌 Features
 
-* REST Assured
-* GET API Testing
-* POST API Testing
-* PUT API Testing
-* PATCH API Testing
-* DELETE API Testing
-* Authentication Framework
-* Request Specifications
-* Response Specifications
-* JSON Schema Validation
-* Path Parameters
-* Query Parameters
-* Serialization
-* Deserialization
-* Reusable API Validator
+### ✅ UI Automation
+
+- Selenium WebDriver
+- Java 17
+- TestNG
+- Page Object Model (POM)
+- ThreadLocal WebDriver
+- Cross Browser Support
+- Local & Remote Execution
+- Selenium Grid Integration
+- Docker Compose
 
 ---
 
-## ✅ Data-Driven Testing
+### ✅ API Automation
 
-* TestNG DataProvider
-* External JSON Test Data
-* Jackson ObjectMapper
-* Reusable JSON Data Reader
+- Rest Assured
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+- Authentication
+- Path Parameters
+- Query Parameters
+- Serialization
+- Deserialization
+- JSON Schema Validation
 
 ---
 
-## ✅ CI/CD & DevOps
+### ✅ Framework Capabilities
 
-* Maven
-* Jenkins Freestyle Jobs
-* Jenkins Pipeline
-* GitHub Integration
+- Factory Design Pattern
+- Runtime Configuration
+- Environment-based Configuration
+- Generic API Client
+- Request & Response Specifications
+- Data Driven Testing
+- JSON Test Data
+- Logging (Log4j2)
+- Extent Reports
+- Screenshots on Failure
 
 ---
 
-# 🏗️ Project Structure
+### ✅ DevOps
+
+- Git & GitHub
+- Docker
+- Docker Compose
+- Selenium Grid
+- Jenkins Ready
+
+---
+
+# 🏗 Framework Architecture
 
 ```text
-src
-├── main
-│   └── java
-│       ├── api
-│       │   ├── auth
-│       │   ├── endpoints
-│       │   ├── models
-│       │   ├── specs
-│       │   └── utils
-│       ├── base
-│       ├── drivers
-│       ├── factory
-│       ├── listeners
-│       ├── pages
-│       └── utilities
-│
-└── test
-    ├── java
-    │   ├── tests
-    │   ├── utilities
-    │   └── testdata
-    │
-    └── resources
-        ├── config
-        ├── schemas
-        └── testdata
+                 BaseTest
+                     │
+             BrowserManager
+                     │
+             BrowserFactory
+                     │
+         ┌───────────┴───────────┐
+         │                       │
+    Local Driver           Remote Driver
+         │                       │
+ Chrome / Edge / Firefox    Selenium Grid
+                                     │
+                              Docker Container
 ```
 
 ---
 
-# 🧪 Framework Highlights
+# 🛠 Tech Stack
 
-### UI Framework
-
-* Hybrid Framework Design
-* Page Object Model (POM)
-* Thread-safe DriverFactory
-* Cross Browser Execution
-* Environment Configuration
-* Rich Reporting
-* Logging
-* Utility Classes
-
-### API Framework
-
-* Modular API Endpoints
-* Authentication Layer
-* Centralized Request Specification
-* Centralized Response Specification
-* Generic API Validation
-* JSON Schema Validation
-* Data-Driven API Testing
-* Externalized Test Data
+| Category | Technology |
+|----------|------------|
+| Language | Java 17 |
+| UI Automation | Selenium WebDriver |
+| API Automation | Rest Assured |
+| Testing | TestNG |
+| Build Tool | Maven |
+| Design Pattern | Factory Pattern |
+| Logging | Log4j2 |
+| Reporting | Extent Reports |
+| Containerization | Docker |
+| Orchestration | Docker Compose |
+| Grid | Selenium Grid |
+| CI/CD | Jenkins |
 
 ---
 
-# ▶️ Running the Framework
+# 📂 Project Structure
 
-## Run Complete Test Suite
+```text
+enterprise-hybrid-automation-framework
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── api
+│   │   │   ├── auth
+│   │   │   ├── constants
+│   │   │   ├── drivers
+│   │   │   ├── factory
+│   │   │   ├── listeners
+│   │   │   ├── pages
+│   │   │   ├── specs
+│   │   │   └── utilities
+│   │
+│   ├── test
+│   │   ├── java
+│   │   │   ├── tests
+│   │   │   └── testdata
+│   │
+│   └── resources
+│       ├── config
+│       ├── schemas
+│       └── testdata
+│
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── pom.xml
+└── README.md
+```
+
+---
+
+# ▶ Running Tests
+
+## UI Tests (Local)
 
 ```bash
 mvn clean test
 ```
 
-## Run UI Test Suite
+---
 
-Execute:
+## API Tests
 
-```text
-testng.xml
-```
-
-## Run API Test Suite
-
-Execute:
-
-```text
-testng-api.xml
+```bash
+mvn clean test -Dsurefire.suiteXmlFiles=testng-api.xml
 ```
 
 ---
 
-# 📊 Reporting
+## Remote Execution using Selenium Grid
 
-The framework generates:
+Update:
 
-* Extent Reports
-* TestNG Reports
-* Console Logs
-* Log4j2 Logs
+```properties
+execution=remote
+```
 
----
+Start Selenium Grid
 
-# 🔄 CI/CD
+```bash
+docker compose up -d
+```
 
-The framework is integrated with:
+Execute Tests
 
-* Jenkins Freestyle Jobs
-* Jenkins Pipeline
-* GitHub
-
----
-
-# 🚀 Upcoming Enhancements
-
-* Generic JSON Data Reader
-* Docker Integration
-* Docker Compose
-* Selenium Grid
-* Parallel Execution
-* GitHub Actions
-* Dynamic Test Data Generation
-* Allure Reporting
+```bash
+mvn clean test
+```
 
 ---
 
-# 🛠️ Technology Stack
+# 🐳 Docker
 
-| Category        | Technologies       |
-| --------------- | ------------------ |
-| Language        | Java 17            |
-| UI Automation   | Selenium WebDriver |
-| API Automation  | REST Assured       |
-| Test Framework  | TestNG             |
-| Build Tool      | Maven              |
-| Reporting       | Extent Reports     |
-| Logging         | Log4j2             |
-| CI/CD           | Jenkins            |
-| Version Control | Git & GitHub       |
-| Data Format     | JSON               |
-| JSON Library    | Jackson            |
+## Build Docker Image
+
+```bash
+docker build -t enterprise-hybrid-automation-framework .
+```
+
+## Execute API Tests
+
+```bash
+docker run --rm enterprise-hybrid-automation-framework
+```
+
+---
+
+# 🌐 Selenium Grid
+
+Start Grid
+
+```bash
+docker compose up -d
+```
+
+Open
+
+```
+http://localhost:4444
+```
+
+---
+
+# 📊 Reports
+
+- Extent Reports
+- TestNG Reports
+- Screenshots on Failure
+- Log4j2 Logs
+
+---
+
+# 🎯 Design Patterns Used
+
+- Factory Pattern
+- Page Object Model (POM)
+- Singleton (Configuration Management)
+- ThreadLocal Driver Management
+
+---
+
+# 🚀 Future Enhancements
+
+- Parallel Cross-Browser Execution
+- GitHub Actions CI/CD
+- Allure Reporting
+- Browser Matrix Execution
+- Database Testing
+- Performance Testing
+- Cloud Selenium Grid
+- AI-powered Test Reporting
 
 ---
 
 # 👨‍💻 Author
 
-**Alok Patel**
+** Alok Patel **
 
-Software QA Engineer | SDET
+Software QA Engineer | SDET | Test Automation Engineer
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
