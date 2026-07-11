@@ -196,22 +196,6 @@ docker run --rm enterprise-hybrid-automation-framework
 
 ---
 
-# 🌐 Selenium Grid
-
-Start Grid
-
-```bash
-docker compose up -d
-```
-
-Open
-
-```
-http://localhost:4444
-```
-
----
-
 # 📊 Reports
 
 - Extent Reports
